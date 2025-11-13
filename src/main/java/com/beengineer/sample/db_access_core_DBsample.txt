@@ -1,6 +1,6 @@
 ■ データベース作成
 --------------------------------------------------------------
-CREATE DATABASE hrm
+CREATE DATABASE postgres
   WITH ENCODING 'UTF8'
        LC_COLLATE='C'
        LC_CTYPE='C'
@@ -8,8 +8,8 @@ CREATE DATABASE hrm
 
 ■ 接続ユーザー作成
 --------------------------------------------------------------
-CREATE USER <<ユーザー名（任意）>>WITH PASSWORD 'xxxxx';
-GRANT ALL PRIVILEGES ON DATABASE hrm TO <<ユーザー名（任意）>>;
+CREATE USER postgres WITH PASSWORD 'P@ssW0rd';
+GRANT ALL PRIVILEGES ON DATABASE postgres TO <<ユーザー名（任意）>>;
 
 ■ データベース作成
 --------------------------------------------------------------
@@ -45,9 +45,9 @@ COMMENT ON COLUMN public.user_table.status
 <system>
   <database>
     <username>postgres</username>
-    <password>パスワード（任意）</password>
+    <password>P@ssW0rd</password>
     <!-- 接続URLは問題の無い形式で記述 -->
-	<url>jdbc:postgresql://<<データベースサーバアドレス>>:5432/hrm</url>
+	<url>jdbc:postgresql://<<データベースサーバアドレス>>:5432/postgres</url>
     <connect>20</connect>
     <driver>org.postgresql.Driver</driver>
     <object_id>CTID</object_id>
