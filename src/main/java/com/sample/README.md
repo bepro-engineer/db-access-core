@@ -14,7 +14,7 @@ CREATE DATABASE postgres
 
 ```sql
 CREATE USER postgres WITH PASSWORD 'P@ssW0rd';
-GRANT ALL PRIVILEGES ON DATABASE postgres TO <<ユーザー名（任意）>>;
+GRANT ALL PRIVILEGES ON DATABASE postgres TO postgres
 ```
 
 ## テーブル作成
@@ -57,3 +57,7 @@ COMMENT ON COLUMN public.user_table.status IS 'Status';
   <!-- （省略） -->
 </system>
 ```
+
+## sample実行
+
+Sample.javaをアプリケーション実行してください。
