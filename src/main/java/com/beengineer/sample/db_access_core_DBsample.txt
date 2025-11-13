@@ -11,6 +11,35 @@ CREATE DATABASE hrm
 CREATE USER <<ユーザー名（任意）>>WITH PASSWORD 'xxxxx';
 GRANT ALL PRIVILEGES ON DATABASE hrm TO <<ユーザー名（任意）>>;
 
+■ データベース作成
+--------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS public.user_table
+(
+    user_id character varying(32) COLLATE pg_catalog."default" NOT NULL,
+    user_name text COLLATE pg_catalog."default" NOT NULL,
+    status character varying(16) COLLATE pg_catalog."default" NOT NULL,
+    create_dt timestamp without time zone DEFAULT now(),
+    update_dt timestamp without time zone DEFAULT now(),
+    CONSTRAINT user_table_pkey PRIMARY KEY (user_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.user_table
+    OWNER to postgres;
+
+COMMENT ON TABLE public.user_table
+    IS 'DbAccessController simple test table';
+
+COMMENT ON COLUMN public.user_table.user_id
+    IS 'User ID';
+
+COMMENT ON COLUMN public.user_table.user_name
+    IS 'User Name';
+
+COMMENT ON COLUMN public.user_table.status
+    IS 'Status';
+
 ■ 最小接続設定（/db-access-core/src/main/webapp/WEB-INF/system.xml）
 --------------------------------------------------------------
 <system>
@@ -25,34 +54,3 @@ GRANT ALL PRIVILEGES ON DATABASE hrm TO <<ユーザー名（任意）>>;
   </database>
 （省略）
 </system>
-
-■ サンプルテーブル（任意）
---------------------------------------------------------------
-CREATE TABLE app_mst
-(
-  app_id char(3) NOT NULL,
-  app_name text NOT NULL,
-  app_kana text,
-  create_dt timestamp NOT NULL DEFAULT now(),
-  create_user char(8) NOT NULL,
-  update_dt timestamp NOT NULL DEFAULT now(),
-  update_user char(8) NOT NULL,
-  del_flg char(1) NOT NULL DEFAULT '0'::bpchar,
-  remark text,
-  CONSTRAINT app_mst_pkey PRIMARY KEY (app_id)
-);
-
-ALTER TABLE app_mst OWNER TO postgres;
-
-COMMENT ON TABLE app_mst IS 'アプリケーションマスタ';
-COMMENT ON COLUMN app_mst.app_id IS 'アプリケーションID';
-COMMENT ON COLUMN app_mst.app_name IS 'アプリケーション名';
-COMMENT ON COLUMN app_mst.app_kana IS 'アプリケーション名（カナ）';
-COMMENT ON COLUMN app_mst.create_dt IS '登録日';
-COMMENT ON COLUMN app_mst.create_user IS '登録者';
-COMMENT ON COLUMN app_mst.update_dt IS '更新日';
-COMMENT ON COLUMN app_mst.update_user IS '更新者';
-COMMENT ON COLUMN app_mst.del_flg IS '論理削除フラグ';
-COMMENT ON COLUMN app_mst.remark IS '備考';
-
-
