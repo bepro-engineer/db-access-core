@@ -9,7 +9,7 @@ package com.beengineer.common;
  *   V1.0  2025/07/15  Bepro  新規開発
  *******************************************************************************/
 public interface Constants {
-	
+
 	/************************************
 	 * 各種定数データ
 	 ************************************/
@@ -66,25 +66,25 @@ public interface Constants {
 	// 前後区分データ
 	public static final String F_B_MST = "f_b_mst";
 
-    /************************************
-     * 文字列定数
-     ************************************/
-    static final String ZERO = "0"; // ゼロ
-    
-    /************************************
-     * 整数定数
-     ************************************/
-    static final int N_Zero = 0;
-    static final int N_One = 1;
-    static final int N_Two = 2;
-    static final int N_Three = 3;
-    static final int N_Four = 4;
-    static final int N_Five = 5;
-    static final int N_Six = 6;
-    static final int N_Seven = 7;
-    static final int N_Eight = 8;
-    static final int N_Nine = 9;
-    static final int N_Ten = 10;
+	/************************************
+	 * 文字列定数
+	 ************************************/
+	static final String ZERO = "0"; // ゼロ
+
+	/************************************
+	 * 整数定数
+	 ************************************/
+	static final int N_Zero = 0;
+	static final int N_One = 1;
+	static final int N_Two = 2;
+	static final int N_Three = 3;
+	static final int N_Four = 4;
+	static final int N_Five = 5;
+	static final int N_Six = 6;
+	static final int N_Seven = 7;
+	static final int N_Eight = 8;
+	static final int N_Nine = 9;
+	static final int N_Ten = 10;
 
 	/************************************
 	 * パラメータ
@@ -104,13 +104,13 @@ public interface Constants {
 	// アサイン一覧からの「戻り」パラメータ
 	static final String P_BACK_FROM_REQ_TO_ASSIGN = "BACK_FROM_REQ_TO_ASSIGN";
 	// 企業詳細からの「戻り」パラメータ
-	static final String P_BACK_FROM_CLIENT_TO_STRUCT= "BACK_FROM_CLIENT_TO_STRUCT";
+	static final String P_BACK_FROM_CLIENT_TO_STRUCT = "BACK_FROM_CLIENT_TO_STRUCT";
 	// 第一階層詳細からの「戻り」パラメータ
-	static final String P_BACK_FROM_DIVISION_TO_STRUCT= "BACK_FROM_DIVISION_TO_STRUCT";
+	static final String P_BACK_FROM_DIVISION_TO_STRUCT = "BACK_FROM_DIVISION_TO_STRUCT";
 	// 第二階層詳細からの「戻り」パラメータ
-	static final String P_BACK_FROM_DEPT_TO_STRUCT= "BACK_FROM_DEPT_TO_STRUCT";
+	static final String P_BACK_FROM_DEPT_TO_STRUCT = "BACK_FROM_DEPT_TO_STRUCT";
 	// 第三階層詳細からの「戻り」パラメータ
-	static final String P_BACK_FROM_SECT_TO_STRUCT= "BACK_FROM_SECT_TO_STRUCT";
+	static final String P_BACK_FROM_SECT_TO_STRUCT = "BACK_FROM_SECT_TO_STRUCT";
 	// 削除メソッド分岐識別子（企業）
 	static final String P_CLIENT = "CLIENT";
 	// 削除メソッド分岐識別子（第一階層）
@@ -119,10 +119,10 @@ public interface Constants {
 	static final String P_DEPT = "DEPT";
 	// 削除メソッド分岐識別子（第三階層）
 	static final String P_SECT = "SECT";
-	
-    /************************************
-     * 分岐定数
-     ************************************/
+
+	/************************************
+	 * 分岐定数
+	 ************************************/
 	static final int N_LIST = 0; // 一覧
 	static final int N_INST = 1; // 詳細（新規）
 	static final int N_EDIT = 2; // 詳細（編集）
@@ -130,73 +130,73 @@ public interface Constants {
 	static final int N_EXEC_EDIT = 4; // 更新処理
 	static final int N_EXEC_DEL = 5; // 削除処理
 	static final int N_PAGING = 6; // 改ページ処理
-	
-    /************************************
-     * アクション定数
-     ************************************/
-    static final String LIST = "LIST";
-    static final String SEARCH = "SEARCH";
-    static final String VIEW = "VIEW";
-    static final String INST = "INST";
-    static final String EDIT = "EDIT";
-    static final String EXEC_INST = "EXEC_INST";
-    static final String EXEC_EDIT = "EXEC_EDIT";
-    static final String DELETE = "DELETE";
-    static final String ONCHANGE = "ONCHANGE";
 
-    /************************************
-     * データベース名
-     ************************************/
+	/************************************
+	 * アクション定数
+	 ************************************/
+	static final String LIST = "LIST";
+	static final String SEARCH = "SEARCH";
+	static final String VIEW = "VIEW";
+	static final String INST = "INST";
+	static final String EDIT = "EDIT";
+	static final String EXEC_INST = "EXEC_INST";
+	static final String EXEC_EDIT = "EXEC_EDIT";
+	static final String DELETE = "DELETE";
+	static final String ONCHANGE = "ONCHANGE";
+
+	/************************************
+	 * データベース名
+	 ************************************/
 	// アプリケーションマスタ
 	static final String APP_MST = "app_mst";
 
-    /************************************
-     * 共通モジュール名
-     ************************************/
-    static final String CONSTANTS = "Constants";
-    static final String DATABEAN = "DataBean";
-    static final String INI_FILE_READ = "IniFileRead";
-    static final String I_TABLE_ENTITY = "ITableEntity";
-    static final String SQL_CONSTANTS = "SqlConstants";
-    static final String SYSTEM_INFO = "SystemInfo";
-    static final String FIELDS_CONSTANTS = "FieldsConstants";
+	/************************************
+	 * 共通モジュール名
+	 ************************************/
+	static final String CONSTANTS = "Constants";
+	static final String DATABEAN = "DataBean";
+	static final String INI_FILE_READ = "IniFileRead";
+	static final String I_TABLE_ENTITY = "ITableEntity";
+	static final String SQL_CONSTANTS = "SqlConstants";
+	static final String SYSTEM_INFO = "SystemInfo";
+	static final String FIELDS_CONSTANTS = "FieldsConstants";
 
-    /************************************
-     * 共通データ操作モジュール
-     ************************************/
-    static final String DBACCESSCONTROLLER = "DbAccessController";
-    static final String DBACCESSDELETE = "DbAccessDelete";
-    static final String DBACCESSFACTORY = "DbAccessFactory";
-    static final String DBACCESSINSERT = "DbAccessInsert";
-    static final String DBACCESSSELECT = "DbAccessSelect";
-    static final String DBACCESSSELECTTYPE = "DbAccessSelectType";
-    static final String DBACCESSUPDATE = "DbAccessUpdate";
-    static final String DBCONNECTIONPOOL = "DbConnectionPool";
-    static final String DBTABLEENTITY = "DbTableEntity";
-    static final String IDBACCESSBEAN = "IDbAccessBean";
+	/************************************
+	 * 共通データ操作モジュール
+	 ************************************/
+	static final String DBACCESSCONTROLLER = "DbAccessController";
+	static final String DBACCESSDELETE = "DbAccessDelete";
+	static final String DBACCESSFACTORY = "DbAccessFactory";
+	static final String DBACCESSINSERT = "DbAccessInsert";
+	static final String DBACCESSSELECT = "DbAccessSelect";
+	static final String DBACCESSSELECTTYPE = "DbAccessSelectType";
+	static final String DBACCESSUPDATE = "DbAccessUpdate";
+	static final String DBCONNECTIONPOOL = "DbConnectionPool";
+	static final String DBTABLEENTITY = "DbTableEntity";
+	static final String IDBACCESSBEAN = "IDbAccessBean";
 
 	/************************************
 	 * 検索条件定数（サイドメニューからの検索時）
 	 ************************************/
 	//アプリケーション名
 	static final String PART_APP_NAME = "part_app_name";
-    
-    /************************************
-     * 共通例外クラス
-     ************************************/
-    static final String SYSTEM_EXCEPTION = "SystemException";
 
-    /************************************
-     * 共通ログクラス
-     ************************************/
-    static final String LOGGER = "Logger";
-    static final String LOG_WRITER = "LogWriter";
+	/************************************
+	 * 共通例外クラス
+	 ************************************/
+	static final String SYSTEM_EXCEPTION = "SystemException";
+
+	/************************************
+	 * 共通ログクラス
+	 ************************************/
+	static final String LOGGER = "Logger";
+	static final String LOG_WRITER = "LogWriter";
 
 	/************************************
 	 * 共通ユーティリティ
 	 ************************************/
 	// レジスターユーティリティ
-	static final String REG_UTIL = "Reg_Util";
+	static final String REG_UTIL = "RegsUtil";
 	// ダウンロードユーティリティ
 	static final String TEXT_OUT = "TextOut";
 	// HRM専用ユーティリティ
@@ -209,13 +209,13 @@ public interface Constants {
 	static final String RANDOM_PASSWORD = "RandomPassword";
 	// 文字列ユーティリティ
 	static final String STRING＿UTIL = "StringUtil";
-	
-    /************************************
-     * コントローラ
-     ************************************/
-	 static final String ADM_LOGIN_CTL = "ADM_LOGIN_CTL";
-    static final String ADM_APP_CTL = "Adm_App_Ctl";
-    
+
+	/************************************
+	 * コントローラ
+	 ************************************/
+	static final String ADM_LOGIN_CTL = "ADM_LOGIN_CTL";
+	static final String ADM_APP_CTL = "Adm_App_Ctl";
+
 	/************************************
 	 * プロジェクト名
 	 ************************************/
@@ -224,28 +224,28 @@ public interface Constants {
 	// グロスプロフィットマネジメントプロジェクト
 	static final String GPM = "	Gpm	";
 
-    /************************************
-     * 成否判定
-     ************************************/
-    static final String W_SUCCESS = "	成功";
-    static final String W_FAIL = "	失敗	";
-    static final String W_SUCCESS_INS = "msg_010";
-    static final String W_SUCCESS_UPD = "msg_011";
-    static final String W_SUCCESS_DEL = "msg_012";
+	/************************************
+	 * 成否判定
+	 ************************************/
+	static final String W_SUCCESS = "	成功";
+	static final String W_FAIL = "	失敗	";
+	static final String W_SUCCESS_INS = "msg_010";
+	static final String W_SUCCESS_UPD = "msg_011";
+	static final String W_SUCCESS_DEL = "msg_012";
 
-    /************************************
-     * 真偽判定
-     ************************************/
-    static final boolean W_TRUE = true;
-    static final boolean W_FALSE = false;
+	/************************************
+	 * 真偽判定
+	 ************************************/
+	static final boolean W_TRUE = true;
+	static final boolean W_FALSE = false;
 
-    /************************************
-     * メッセージ
-     ************************************/
-    static final String M_ROLLBACK_FAIL = " rollbackに失敗しました！！ ";
-    static final String M_SYSTEM_EXCEPTION_OCCUR = " SystemExceptionが発生しました！！ ";
-    static final String M_SQL_EXCEPTION_OCCUR = " SQLExceptionが発生しました！！ ";
-    static final String M_SQL_PARSE_EXCEPTION_OCCUR = " ParseLExceptionが発生しました！！ ";
+	/************************************
+	 * メッセージ
+	 ************************************/
+	static final String M_ROLLBACK_FAIL = " rollbackに失敗しました！！ ";
+	static final String M_SYSTEM_EXCEPTION_OCCUR = " SystemExceptionが発生しました！！ ";
+	static final String M_SQL_EXCEPTION_OCCUR = " SQLExceptionが発生しました！！ ";
+	static final String M_SQL_PARSE_EXCEPTION_OCCUR = " ParseLExceptionが発生しました！！ ";
 	// アカウント、またはパスワードが違います。
 	static final String M_ERR_000 = "err_000";
 	// この企業に紐も付く第一階層、またはスタッフが存在するため、削除できません。
@@ -308,7 +308,7 @@ public interface Constants {
 	static final String M_ERR_053 = "err_053";
 	// この項目を使用している支出データが存在するため削除できません。
 	static final String M_ERR_054 = "err_054";
-	
+
 	/************************************
 	 * ログパラメータ
 	 ************************************/
