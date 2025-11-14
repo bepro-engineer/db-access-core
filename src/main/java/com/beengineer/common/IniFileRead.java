@@ -89,6 +89,6 @@ public class IniFileRead {
 	// 設定ファイルのパスを動的に取得するメソッド
 	public static String getConfigFilePath() {
 		// 設定ファイルのパスを取得する処理（仮に設定）
-		return "/Users/User/Work/Java/db-access-core/src/main/webapp/WEB-INF/system.xml";
+		return "/Users/<<ユーザー名>>/Work/Java/db-access-core/src/main/webapp/WEB-INF/system.xml";
 	}
 }
