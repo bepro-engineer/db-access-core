@@ -20,23 +20,58 @@ GRANT ALL PRIVILEGES ON DATABASE postgres TO postgres
 ## テーブル作成
 
 ```sql
-CREATE TABLE IF NOT EXISTS public.user_table
+CREATE TABLE IF NOT EXISTS public.user_mst
 (
     user_id character varying(32) COLLATE pg_catalog."default" NOT NULL,
-    user_name text COLLATE pg_catalog."default" NOT NULL,
-    status character varying(16) COLLATE pg_catalog."default" NOT NULL,
+    user_name character varying(64) COLLATE pg_catalog."default" NOT NULL,
+    e_mail character varying(256) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(256) COLLATE pg_catalog."default" NOT NULL,
     create_dt timestamp without time zone DEFAULT now(),
+    create_user character varying(32) COLLATE pg_catalog."default",
     update_dt timestamp without time zone DEFAULT now(),
-    CONSTRAINT user_table_pkey PRIMARY KEY (user_id)
-);
+    update_user character varying(32) COLLATE pg_catalog."default",
+    del_flg character(1) COLLATE pg_catalog."default" DEFAULT '0'::bpchar,
+    remark text COLLATE pg_catalog."default",
+    CONSTRAINT user_mst_pkey PRIMARY KEY (user_id)
+)
 
-ALTER TABLE IF EXISTS public.user_table
-    OWNER TO postgres;
+TABLESPACE pg_default;
 
-COMMENT ON TABLE public.user_table IS 'DbAccessController simple test table';
-COMMENT ON COLUMN public.user_table.user_id IS 'User ID';
-COMMENT ON COLUMN public.user_table.user_name IS 'User Name';
-COMMENT ON COLUMN public.user_table.status IS 'Status';
+ALTER TABLE IF EXISTS public.user_mst
+    OWNER to postgres;
+
+COMMENT ON TABLE public.user_mst
+    IS 'User master table';
+
+COMMENT ON COLUMN public.user_mst.user_id
+    IS 'User ID';
+
+COMMENT ON COLUMN public.user_mst.user_name
+    IS 'User Name';
+
+COMMENT ON COLUMN public.user_mst.e_mail
+    IS 'Email';
+
+COMMENT ON COLUMN public.user_mst.password
+    IS 'password';
+
+COMMENT ON COLUMN public.user_mst.create_dt
+    IS 'Create datetime';
+
+COMMENT ON COLUMN public.user_mst.create_user
+    IS 'Create user';
+
+COMMENT ON COLUMN public.user_mst.update_dt
+    IS 'Update datetime';
+
+COMMENT ON COLUMN public.user_mst.update_user
+    IS 'Update user';
+
+COMMENT ON COLUMN public.user_mst.del_flg
+    IS 'Delete flag';
+
+COMMENT ON COLUMN public.user_mst.remark
+    IS 'Remark';
 ```
 
 ## 最小接続設定

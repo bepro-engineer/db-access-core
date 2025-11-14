@@ -8,12 +8,13 @@ import java.util.Map;
 import com.beengineer.common.data.DbAccessController;
 import com.beengineer.common.data.DbConnectionPool;
 import com.beengineer.common.data.DbTableEntity;
+import com.beengineer.common.log.Logger;
 
-public class Sample {
+public class Sample1 {
 
 	private static final boolean W_FALSE = false;
 	private static final int N_Zero = 0;
-	private static final String USER_TBL = "user_table";
+	private static final String USER_TBL = "user_mst";
 
 	public static void main(String[] args) {
 
@@ -22,6 +23,8 @@ public class Sample {
 		DbConnectionPool pool = DbConnectionPool.getInstance();
 		Connection con = null;
 
+		Logger.init();
+
 		try {
 			con = pool.getConnection();
 			con.setAutoCommit(W_FALSE);
@@ -29,14 +32,16 @@ public class Sample {
 			Map<String, String> params = new HashMap<>();
 			params.put("user_id", "test001");
 			params.put("user_name", "山田太郎");
-			params.put("status", "active");
+			params.put("e_mail", "test@example.co.jp");
+			params.put("password", "P@ssW0rd");
 
 			DbTableEntity ite = dac.getDbTableEntity();
 			//			ite.resetAllFlg();
 
 			ite.setValue("user_id", params.get("user_id"), N_Zero);
 			ite.setValue("user_name", params.get("user_name"), N_Zero);
-			ite.setValue("status", params.get("status"), N_Zero);
+			ite.setValue("e_mail", params.get("e_mail"), N_Zero);
+			ite.setValue("password", params.get("password"), N_Zero);
 
 			int iResult = dac.doExec(con, USER_TBL);
 
@@ -56,7 +61,7 @@ public class Sample {
 			sql.append(" WHERE user_id='test001'");
 
 			// ----------------------------------------------------------
-			// 実行
+			// 実行％
 			// ----------------------------------------------------------
 			iResult = dac.doSelect(con, sql.toString());
 			if (iResult >= 1) {
