@@ -14,23 +14,20 @@ public interface SqlConstants {
 	/************************************
 	 * ADM_LOGIN_EVT checkAuth()
 	 ************************************/
-	static final String SQL_ADM_LOGIN_METHOD_AUTH_01 = "SELECT "
-			+ " T1.ctid, "
-			+ " T1.auth_id,"
-			+ " T1.client_id,"
-			+ " T2.charge_id, "
-			+ " T2.charge_name, "
-			+ " T2.charge_pw, "
-			+ " T2.e_mail_add, "
-			+ " T1.create_dt, "
-			+ " T1.create_user, "
-			+ " T1.update_dt, "
-			+ " T1.update_user, "
-			+ " T1.del_flg, "
-			+ " T2.remark "
+	static final String SQL_USER_SELECT_BY_ID = "SELECT "
+			+ " ctid, "
+			+ " user_id,"
+			+ " user_name,"
+			+ " company_id,"
+			+ " create_dt, "
+			+ " create_user, "
+			+ " update_dt, "
+			+ " update_user, "
+			+ " del_flg, "
+			+ " remark "
 			+ " FROM "
-			+ " join_trn T1 join charge_mst T2 on( T1.charge_id = T2.charge_id)"
-			+ " Where T2.e_mail_add = '";
+			+ " user_mst"
+			+ " Where user_id= ";
 
 	/************************************
 	 * ADM_APP_EVT getList()
@@ -49,7 +46,7 @@ public interface SqlConstants {
 			+ " FROM "
 			+ " app_mst"
 			+ " Where del_flg = '0'";
-	
+
 	/************************************
 	 * ADM_APP_EVT doDelete()
 	 ************************************/
@@ -58,7 +55,7 @@ public interface SqlConstants {
 			+ " from "
 			+ " app_mst"
 			+ " Where del_flg = '0'";
-    /************************************
-     * ここまで
-     ************************************/
+	/************************************
+	 * ここまで
+	 ************************************/
 }
